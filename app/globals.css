@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Responsive Typography */
+@layer utilities {
+  .text-responsive {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+  .heading-responsive {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+  /* Container widths */
+  .container-fluid {
+    @apply w-full px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive paddings */
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24 lg:py-32;
+  }
+
+  .content-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+
+  /* Responsive margins */
+  .section-margin {
+    @apply my-8 sm:my-12 md:my-16 lg:my-20;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  .text-responsive-subtitle {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .text-responsive-body {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  /* Responsive grid layouts */
+  .grid-responsive-cols {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Responsive flex layouts */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row;
+  }
+
+  /* Responsive gaps */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-10;
+  }
+
+  /* Responsive borders */
+  .border-responsive {
+    @apply border-0 sm:border;
+  }
+
+  /* Responsive spacing utilities */
+  .space-responsive {
+    @apply space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+/* Mobile Menu Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.slide-out {
+  animation: slideOut 0.3s ease-out;
+}
+
+/* Responsive Padding & Margins */
+@layer utilities {
+  .container-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+  
+  .section-spacing {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+}
+
+/* Grid Layouts */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8;
+}
+
+/* Card Layouts */
+.card-responsive {
+  @apply p-4 sm:p-6 md:p-8;
+}
+
+/* Form Elements */
+.input-responsive {
+  @apply w-full p-2 sm:p-3 md:p-4;
+}
+
+/* Buttons */
+.button-responsive {
+  @apply px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4;
+}
+
+/* Images */
+.image-responsive {
+  @apply w-full h-auto object-cover;
+}
+
+/* Navigation */
+.nav-responsive {
+  @apply flex flex-col sm:flex-row items-center justify-between;
+}
+
+/* Media Queries for Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+/* Mobile-first media queries */
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch handling */
+@media (hover: none) and (pointer: coarse) {
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
