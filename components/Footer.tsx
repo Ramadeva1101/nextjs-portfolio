@@ -25,7 +25,7 @@ const socialLinks = [
 const contactInfo = [
   {
     icon: Phone,
-    text: "+6282145281627"
+    text: "+6282146281627"
   }
 ];
 
