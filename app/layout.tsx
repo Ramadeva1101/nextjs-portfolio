@@ -21,21 +21,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased bg-transparent`}>
+      <body className={`${inter.className} antialiased overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <BackgroundLines className="fixed inset-0">
-            <div></div>
-          </BackgroundLines>
-          <div className="relative z-10">
+          <div className="fixed inset-0 z-0">
+            <BackgroundLines className="w-full h-full opacity-50">
+              <div />
+            </BackgroundLines>
+          </div>
+          
+          <div className="relative z-10 flex flex-col">
             <Navbar />
-            <main className="min-h-screen pt-24 pb-16">
-              <div className="container mx-auto px-4">
-                {children}
+            <main className="flex-grow min-h-screen">
+              <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="py-16 sm:py-20 md:py-24">
+                  {children}
+                </div>
               </div>
             </main>
             <Footer />
